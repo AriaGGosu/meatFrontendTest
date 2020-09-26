@@ -26,7 +26,7 @@
           :key="card.id"
           class="col-12 col-lg-6 col-xl-4"
         >
-          <ArticleCard :cardData="card" />
+          <ArticleCard :loading="cardLoading" :cardData="card" />
         </div>
       </div>
     </div>
@@ -48,6 +48,7 @@ export default {
   },
   data() {
     return {
+      cardLoading: null,
       cardsList: [],
       allCardListData: [],
       linksData: [
@@ -73,12 +74,22 @@ export default {
       this.cardsList = this.allCardListData;
     },
     async setFilteredData(filter) {
+      this.setCardLoading();
       this.cardsList = await this.getFilteredData(filter);
+      this.disableCardLoading();
+    },
+    setCardLoading() {
+      this.cardLoading = true;
+    },
+    disableCardLoading() {
+      this.cardLoading = false;
     },
   },
   async created() {
+    this.setCardLoading();
     this.allCardListData = await this.getAllDataFromApi();
     this.cardsList = this.allCardListData;
+    this.disableCardLoading();
   },
 };
 </script>
