@@ -7,7 +7,6 @@
 
 <script>
 import MainLayout from "./layout/mainLayout";
-import "./styles/scss/app.scss"
 
 export default {
   name: "App",

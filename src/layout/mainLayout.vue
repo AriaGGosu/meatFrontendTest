@@ -1,22 +1,22 @@
 <template>
   <main>
-    <Header />
-    <ContactUs />
+    <HeaderBounceEffect />
     <OurArticles />
+    <ContactUs />
   </main>
 </template>
 
 <script>
-import Header from "../views/Header/index";
-import ContactUs from "../views/ContactUs";
-import OurArticles from "../views/OurArticles";
+import HeaderBounceEffect from "../views/HeaderBounceEffect/index";
+import OurArticles from "../views/OurArticles/index";
+import ContactUs from "../views/ContactUs/index";
 
 export default {
-  name: "App",
+  name: "mainLayout",
   components: {
-    Header,
-    ContactUs,
+    HeaderBounceEffect,
     OurArticles,
+    ContactUs,
   },
 };
 </script>
