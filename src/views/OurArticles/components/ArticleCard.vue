@@ -7,9 +7,8 @@
         class="card-img-top"
         alt="img"
       />
-      <div class="loading-container">
+      <div v-if="loading" class="loading-container">
         <div
-          v-if="loading"
           class="spinner-border text-primary"
           style="width: 3rem; height: 3rem;"
           role="status"
@@ -45,6 +44,6 @@ export default {
 }
 .loading-container {
   text-align: center;
-  padding: 50px;
+  padding: 76px;
 }
 </style>
